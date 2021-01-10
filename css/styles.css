@@ -1,0 +1,669 @@
+:root{
+   --red:#ff2e63;
+   --black:#252a34;
+   --blue:#08d9d6;
+   --white:#eaeaea;
+   --title:35px;
+   --text:19px;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background: rgb(238, 226, 226);
+    overflow-x:hidden ;
+    font-family: 'Red Hat Text', sans-serif;
+    
+}
+#button-up{
+    width: 60px;
+    height: 60px;
+    background:#e70d7a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    position: fixed;
+    bottom: 200px;
+    right: 10px;
+    cursor: pointer;
+    border: 4px solid transparent;
+    transition: all 300ms ease;
+}
+#button-up:hover{
+    transform: scale(1.1);
+    border-color: rgba(0, 0, 0, 0,1);
+}
+
+/** Navegation Menu **/
+#header{
+    position: relative;
+    width: 100%;
+}
+.menu{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+.menu .logo-box{margin-left: 20px;}
+.menu .logo-box h1 a{
+    text-decoration: none;
+    font-size: var(--title);
+    font-weight: 400;
+    color:var(--black);
+}
+.menu .list-container{margin-right: 20px;}
+.menu .list-container ul{display: flex;}
+.menu .list-container ul li{list-style: none;}
+.menu .list-container ul li a{
+    text-decoration: none;
+    margin: 0px 10px;
+    padding:8px;
+    color: var(--black);
+    border-radius: 24px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+.menu .list-container ul li a.active{
+    background: var(--black);
+    color:#fff;
+}
+.menu .list-container ul li a:hover{
+    background: var(--black);
+    color:#fff;
+}
+
+.btn-menu > .fa-bars{
+    display: none;
+}
+
+@media only screen and (max-width:900px){
+    .btn-menu > .fa-bars{
+        display: block;
+        position:absolute;
+        right: 30px;
+        top: 20px;
+        font-size: 28px;
+        color: var(--black);
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    .btn-menu > .fa-times{color: var(--black);}
+    .menu .logo-box{margin-left: 30px;}
+    .menu .list-container{
+        position: fixed;
+        top:60px;
+        left:-100%;
+        background:#fff;
+        width: 100%;
+        height: calc(100vh - 60px);
+    }
+    .menu .list-container .lists{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-top:4px solid var(--black);
+    }
+    .menu .list-container ul li{
+        width: 90%;
+        border-bottom: 2px solid var(--black);
+        display: flex;
+        justify-content: center;
+    }
+    .menu .list-container ul li a{
+        font-size: 20px;
+        text-align: center;
+        padding:12px 0px;
+    }
+    .menu .list-container ul li a.active{
+        background: none;
+        color:var(--black);
+    }
+    .menu .list-container ul li a:hover{
+        background: none;
+        color:var(--red);
+    }
+}
+
+
+
+/** Navegation Menu **/
+
+/** IMG Header **/
+
+.banner{
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 50px);
+	background-color: #F5F5F5;
+	background-size: cover;
+	background-position: center;
+	transition: all .1s ease-out;
+	background-image: url('../img/new-york-3551118_1920.jpg');
+    animation: banner 28s infinite linear;   
+}
+.banner-content{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	color: #FFF;
+	background-color: rgba(0, 22, 40, .6);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner .banner-content h1{
+    position: absolute;
+    font-size: 50px;
+    color:#fff;
+    font-weight: 200;
+    position:absolute;
+}
+
+.banner .banner-content hr{
+    position: absolute;
+    width: 400px;
+    height: 2px;
+    background: #fff;
+    border: none;
+    margin-top: 80px;
+}
+ .banner .banner-content p{
+    position: absolute;
+    font-size: 20px;
+    color: #fff;
+    margin-top: 150px;
+}
+
+@keyframes banner{
+	0%{
+		background-image: url('../img/bridge-1333645_1920.jpg');
+	}
+	25%{
+		background-image: url('../img/bridge-1333645_1920.jpg');
+	}
+
+
+	26%{
+		background-image: url('../img/monument-valley-1081996_1920.jpg');
+	}
+	50%{
+		background-image: url('../img/monument-valley-1081996_1920.jpg');
+	}
+
+
+	51%{
+		background-image: url('../img/new-york-3551118_1920.jpg');
+	}
+	75%{
+		background-image: url('../img/new-york-3551118_1920.jpg');
+	}
+	
+
+	76%{
+		background-image: url('../img/new-york-3551125_1920.jpg');
+	}
+	100%{
+		background-image: url('../img/new-york-3551125_1920.jpg');
+	}
+
+}
+
+@media only screen and (max-width:773px ){
+    .banner .banner-content h1{font-size: 40px;}
+}
+@media only screen and (max-width:590px){
+    .banner .banner-content h1{font-size: 30px;}
+    .banner .banner-content hr{width: 100px;}
+    .banner .banner-content p{font-size: 17px;}
+}
+
+
+/** Acerca de Nosotros **/
+.acerca-de{
+    width: 100%;
+    margin-top: 120px;
+}
+.acerca-de .info-container{
+    width: 80%;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.acerca-de .info-container h1{
+    font-size: 50px;
+    font-weight: 400;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.acerca-de .info-container p{
+    text-align: center;
+    font-size: 17px;
+    color: var(--black);
+    line-height: 35px;
+    margin:10px 0px;
+}
+.acerca-de .info-container .about-gallery{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px;
+}
+.acerca-de .info-container .about-gallery img{
+    width: calc(33.333% - 10px);
+    height: 300px;
+    margin: 10px 10px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:773px){
+    .acerca-de .info-container .about-gallery{flex-direction: column;}
+    .acerca-de .info-container .about-gallery img{width: 100%;}
+}
+@media only screen and (max-width:590px){
+    .acerca-de .info-container h1{font-size: 30px;}
+    .acerca-de .info-container p{font-size: 15px;}
+}
+
+
+/** Nuestros servicios **/
+
+.testimonios-title-1{
+    width: 50%;
+    margin:auto;
+    text-align: center;
+}
+.testimonios-title-1 h2{
+    font-size: 50px;
+    font-weight: normal;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+.testimonios-title-1 hr{
+    width: 60%;
+    height: 2px;
+    margin:auto;
+    background: var(--black);
+}
+.container-card{
+    position: center;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+}
+
+.container-card .card-1{
+    position: relative;
+    height: 250px;
+    background: #ffffff;
+    display: flex;
+    width: 45%;
+    margin: 30px 0;
+}
+
+.container-card .card-1 .imgbx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333333;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.container-card .card-1:hover .imgbx{
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    top: calc(50% - 75px);
+    transition: 0.5s ease-in-out;
+    background: #ff0057;
+}
+
+.container-card .card-1 .imgbx:before{
+content: attr(data-text);
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+text-align: center;
+font-size: 6em;
+color: rgba(255, 255, 255, .05);
+font-weight: 700;
+}
+
+.container-card .card-1 .imgbx img{
+      max-width: 100px;
+      transition: 0.5s ease-in-out;
+}
+
+.container-card .card-1:hover .imgbx img{
+    max-width: 75px;
+    
+}
+
+ .container-card  .card-1 .content-card{
+     position: absolute;
+     right: 0;
+     width: calc(100% - 75px);
+     height: 100%;
+     padding: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ 
+
+ .container-card .card-1 .content-card h3{
+      margin-bottom: 5px;
+     font-size: 24px;
+ }
+
+ .container-card .card-1 .content-card p{
+     margin-top: 15px;
+ }
+
+
+ @media (max-width:992px)
+ {
+     .container-card
+     {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+     }
+     .container-card .card-1
+     {
+         width: 400px;
+     }
+ }
+ @media (max-width:768px)
+ {
+    .container-card .card-1
+     {
+         max-width: 300px;
+         flex-direction: column;
+         height: auto;
+     }
+     .container-card .card-1 .imgbx
+    {
+        position: relative;
+    }
+    .container-card .card-1 .imgbx,
+    .container-card .card-1:hover .imgbx
+    {
+        width: 100%;
+        height: 200px;
+        left: 0;
+    }
+    .container-card .card-1 .imgbx img,
+    .container-card .card-1:hover .imgbx img
+    {
+        max-width: 100px;
+
+    }
+    .container-card .card-1 .content-card
+    {
+        position: relative;
+        width: 100%;
+    }
+ }
+
+/** Testimonios **/
+.testimonios{
+    width: 100%;
+    margin-top: 120px;
+}
+.testimonios .testimonios-title{
+    width: 50%;
+    margin:auto;
+    text-align: center;
+}
+.testimonios .testimonios-title h2{
+    font-size: 50px;
+    font-weight: normal;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+.testimonios .testimonios-title hr{
+    width: 60%;
+    height: 2px;
+    margin:auto;
+    background: var(--black);
+}
+.testimonios .box-testimonio{
+    width: 90%;
+    margin: 80px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.testimonios .box-testimonio .card-testimonio{
+    width: 45%;
+    margin: 20px;
+}
+.testimonios .box-testimonio .card-testimonio .card-img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.testimonios .box-testimonio .card-testimonio .testimonio-text{
+    border: 2px solid var(--red);
+    padding:20px;
+    border-radius: 20px;
+    transition: 0.1s;
+    cursor: pointer;
+}
+.testimonios .box-testimonio .card-testimonio .testimonio-text h4{
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--red);
+    text-align: center;
+    margin-bottom: 10px;
+    transition: 0.1s;
+}
+.testimonios .box-testimonio .card-testimonio .testimonio-text p{
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    color: var(--black);
+}
+.testimonios .box-testimonio .card-testimonio .testimonio-text:hover{
+    border: 2px solid var(--blue);
+}
+.testimonios .box-testimonio .card-testimonio .testimonio-text:hover h4{
+    color: var(--blue);
+}
+
+@media only screen and (max-width:890px){
+    .testimonios .box-testimonio .card-testimonio .card-img img{width: 200px; height: 200px;}
+    .testimonios .box-testimonio .card-testimonio{width: 100%;}
+    .testimonios .box-testimonio .card-testimonio .testimonio-text h4{font-size: 25px;}
+    .testimonios .box-testimonio .card-testimonio .testimonio-text p{font-size: 17px; line-height: 35px;}
+}
+
+/** Footer **/
+
+footer{
+    width: 100%;
+    background: #202020;
+    color: white;
+   
+}
+
+.container-footer-all{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    
+}
+
+.container-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.column-1{
+    max-width: 400px;
+}
+
+.column-1 h1{
+    font-size: 22px;
+}
+
+.column-1 p{
+    font-size: 14px;
+    color: #c7c7c7;
+    margin-top: 20px;
+}
+
+.column-2{
+    max-width: 400px;
+}
+
+.column-2 h1{
+    font-size: 22px;
+}
+
+.column-2 .row{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row label{
+    margin-top: 10px;
+    margin-left: 15px;
+    color: #c7c7c7;
+}
+
+.column-3{
+    max-width: 400px;
+}
+
+.column-3 h1{
+    font-size: 22px;
+}
+ .row-2{
+     margin-top: 20px;
+     display: flex;
+ }
+
+ .row-2 label{
+     margin-left: 20px;
+     max-width: 140px;
+     margin-top: 10px;
+     color: #c7c7c7;
+    
+ }
+
+ .container-footer{
+  width: 100%;
+  background: #101010;
+  display: flex;
+}
+
+ .footer-2{
+     display: flex;
+     justify-content: space-between;
+     max-width: 1200px;
+     margin: auto;
+     padding: 20px;
+}
+
+ .copyright{
+     color: #c7c7c7;
+ }
+
+ .copyright{
+     text-decoration: none;
+     color: rgb(92, 92, 92);
+     font-weight: bold;
+ }
+
+#app-whatsapp{
+	position: fixed;
+	right: 8px;
+	bottom: 25px;
+	width: 60px;
+	z-index: 1000;
+    display: none;
+    transition: all 300ms ease;
+}
+
+#app-whatsapp{
+	bottom: 95px;
+	display: block;
+}
+#app-whatsapp i{
+	font-size: 63px;
+}
+#app-whatsapp i{
+	color: #1ebea5;
+}
+
+.container-footer-all .messeguer{
+    position: fixed;
+    bottom: 20px;
+    right: 8px;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: all 300ms ease;
+}
+
+@media  screen and (max-width:1100px)
+{
+    .container-body{
+        flex-wrap: wrap;
+    }
+}
+
+@media  screen and (max-width:715px)
+{
+    .column-2,
+    .column-3{
+        margin-top: 40px;
+    }
+}
+
+
+
+
